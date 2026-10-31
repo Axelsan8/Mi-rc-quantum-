@@ -1,0 +1,11 @@
+{
+  "name": "MIEC QUANTUM",
+  "short_name": "MIEC",
+  "description": "Laboratorio personal de sonido, respiración y movimiento.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0c111b",
+  "theme_color": "#101522",
+  "icons": []
+}
