@@ -3,7 +3,7 @@
 Prototipo web móvil instalable (PWA) para explorar autorregulación mediante sonido, respiración, movimiento y autoobservación.
 
 ## Estado
-Versión funcional **0.5**. Incluye aprendizaje local exploratorio y un conector opcional a modelos externos. El repositorio está preparado para GitHub Pages.
+Versión **0.6**. Laboratorio sonoro ampliado con síntesis local y controles de escucha. Incluye aprendizaje local exploratorio y un conector opcional a modelos externos. El repositorio está preparado para GitHub Pages.
 
 ## Publicar con GitHub Pages
 1. Abre **Settings → Pages** en este repositorio.
@@ -14,7 +14,9 @@ Versión funcional **0.5**. Incluye aprendizaje local exploratorio y un conector
 
 ## Funciones
 - Registro subjetivo de energía, ánimo y tensión.
-- Motor de sonido local: tono mono, tono binaural y ruido filtrado.
+- Motor sonoro local sin servicios externos: binaural estéreo, tono continuo con cuatro formas de onda, ruido filtrado, drone armónico de tres capas y pulso modulado.
+- Controles de frecuencia, diferencia binaural, forma de onda, ritmo de modulación y volumen máximo limitado; temporizador de escucha y registro de sesiones sonoras.
+- Síntesis de audio en tiempo real con Web Audio API: no requiere pistas descargadas, bibliotecas de pago, suscripciones ni claves API.
 - Respiración guiada cómoda sin retenciones.
 - Secuencia de movilidad Flow de tres cuerpos.
 - Asignación aleatoria de tres condiciones exploratorias: audio, respiración y combinación. La condición inicia solo los componentes asignados y bloquea el control del componente excluido.
@@ -41,6 +43,12 @@ Versión funcional **0.5**. Incluye aprendizaje local exploratorio y un conector
 4. Autoriza el envío de los datos mínimos antes de cada consulta.
 
 El modelo y proveedor son configurables. No se incrustan claves API en el sitio estático.
+
+## Límites del audio
+- La síntesis se ejecuta dentro del navegador y depende de que el dispositivo admita Web Audio API. El navegador puede pausar el audio al bloquear la pantalla o cambiar de aplicación.
+- El temporizador detiene el audio al finalizar; no garantiza reproducción en segundo plano.
+- El volumen se limita en la interfaz, pero el nivel real depende del dispositivo y de los auriculares. Empieza bajo.
+- El motor de sonido no necesita conexión a internet después de cargar la aplicación, pero la primera carga sí requiere abrir el sitio.
 
 ## Próximas mejoras recomendadas
 1. Añadir pruebas automatizadas de que cada condición experimental activa únicamente sus componentes previstos y registra fallos de inicio.
