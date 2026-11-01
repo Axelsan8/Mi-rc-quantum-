@@ -3,7 +3,7 @@
 Prototipo web móvil instalable (PWA) para explorar autorregulación mediante sonido, respiración, movimiento y autoobservación.
 
 ## Estado
-Versión inicial funcional **0.3**. El repositorio está preparado para GitHub Pages.
+Versión inicial funcional **0.4**. El repositorio está preparado para GitHub Pages.
 
 ## Publicar con GitHub Pages
 1. Abre **Settings → Pages** en este repositorio.
@@ -17,9 +17,9 @@ Versión inicial funcional **0.3**. El repositorio está preparado para GitHub P
 - Motor de sonido local: tono mono, tono binaural y ruido filtrado.
 - Respiración guiada cómoda sin retenciones.
 - Secuencia de movilidad Flow de tres cuerpos.
-- Asignación aleatoria de tres condiciones exploratorias: audio, respiración y combinación.
+- Asignación aleatoria de tres condiciones exploratorias: audio, respiración y combinación. La condición inicia solo los componentes asignados y bloquea el control del componente excluido.
 - Registro local, historial y exportación JSON.
-- Caché offline básica mediante service worker.
+- Caché offline básica mediante service worker, con versión de caché actualizada e icono SVG de la aplicación.
 
 ## Importante: evidencia y seguridad
 - La aplicación no mide actividad cerebral, HRV ni biomarcadores.
@@ -31,7 +31,7 @@ Versión inicial funcional **0.3**. El repositorio está preparado para GitHub P
 - “Quantum” es una identidad conceptual. No implica computación cuántica ni procesos cuánticos cerebrales.
 
 ## Próximas mejoras recomendadas
-1. Añadir pruebas automatizadas de que cada condición experimental activa únicamente sus componentes previstos.
+1. Añadir pruebas automatizadas de que cada condición experimental activa únicamente sus componentes previstos y registra fallos de inicio.
 2. Separar con precisión duración de sesión, exposición de audio y guía respiratoria.
 3. Añadir consentimiento, registro de eventos y exportación anonimizada.
 4. Diseñar protocolo N-of-1 con hipótesis previas, periodos comparables y análisis descriptivo.
