@@ -104,10 +104,11 @@ export default {
       return json({ error: "AI provider, model or server-side API key is not configured." }, 503, cors);
     }
 
-    const declaredLength = Number(request.headers.get("Content-Length") || 0);
-    if (declaredLength > 10000) return json({ error: "Request too large." }, 413, cors);
+    let rawBody;
+    try { rawBody = await request.text(); } catch { return json({ error: "Could not read request body." }, 400, cors); }
+    if (rawBody.length > 10000) return json({ error: "Request too large." }, 413, cors);
     let body;
-    try { body = await request.json(); } catch { return json({ error: "Invalid JSON." }, 400, cors); }
+    try { body = JSON.parse(rawBody); } catch { return json({ error: "Invalid JSON." }, 400, cors); }
     if (body.consent !== true) return json({ error: "Explicit consent is required." }, 400, cors);
     const question = typeof body.question === "string" ? body.question.trim().slice(0, 500) : "";
     if (!question) return json({ error: "A question is required." }, 400, cors);
