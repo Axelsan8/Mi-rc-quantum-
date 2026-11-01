@@ -84,8 +84,9 @@
 'use strict';
 const $=id=>document.getElementById(id);
 const storeKey='miec_quantum_sessions_v04';
+const legacyStoreKey='miec_quantum_sessions_v03';
 let baseline=null, audioCtx=null, nodes=[], masterGain=null, breathTimer=null, breathStarted=0, condition=null;
-const load=()=>{try{const value=JSON.parse(localStorage.getItem(storeKey)||'[]');return Array.isArray(value)?value:[]}catch{return []}};
+const load=()=>{try{let raw=localStorage.getItem(storeKey);if(!raw){raw=localStorage.getItem(legacyStoreKey);if(raw)localStorage.setItem(storeKey,raw)}const value=JSON.parse(raw||'[]');return Array.isArray(value)?value:[]}catch{return []}};
 const save=rows=>{try{localStorage.setItem(storeKey,JSON.stringify(rows));return true}catch(error){console.warn('MIEC storage unavailable',error);return false}};
 const now=()=>new Date().toISOString();
 const sliders=['energy','mood','tension','tone','beat','volume','afterMood','afterTension'];
