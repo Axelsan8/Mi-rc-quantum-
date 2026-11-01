@@ -3,7 +3,7 @@
 Prototipo web móvil instalable (PWA) para explorar autorregulación mediante sonido, respiración, movimiento y autoobservación.
 
 ## Estado
-Versión **0.6**. Laboratorio sonoro ampliado con síntesis local y controles de escucha. Incluye aprendizaje local exploratorio y un conector opcional a modelos externos. El repositorio está preparado para GitHub Pages.
+Versión **0.7**. Incorpora un sistema de aprendizaje multimotor local y análisis descriptivo. Laboratorio sonoro ampliado con síntesis local y controles de escucha. Incluye aprendizaje local exploratorio y un conector opcional a modelos externos. El repositorio está preparado para GitHub Pages.
 
 ## Publicar con GitHub Pages
 1. Abre **Settings → Pages** en este repositorio.
@@ -17,6 +17,10 @@ Versión **0.6**. Laboratorio sonoro ampliado con síntesis local y controles de
 - Motor sonoro local sin servicios externos: binaural estéreo, tono continuo con cuatro formas de onda, ruido filtrado, drone armónico de tres capas y pulso modulado.
 - Controles de frecuencia, diferencia binaural, forma de onda, ritmo de modulación y volumen máximo limitado; temporizador de escucha y registro de sesiones sonoras.
 - Síntesis de audio en tiempo real con Web Audio API: no requiere pistas descargadas, bibliotecas de pago, suscripciones ni claves API.
+- Sistema multimotor: autoevaluaciones antes/después de movilidad, coordinación, equilibrio, rigidez percibida, calma, autopercepción emocional, atención y memoria.
+- Registro de combinación practicada, duración, sueño, estrés y notas de contexto para interpretar los cambios.
+- Motor adaptativo que agrupa sesiones por combinación y solo muestra una pista provisional tras al menos tres registros por grupo.
+- Motor científico descriptivo: media, desviación estándar e intervalo aproximado de incertidumbre, con advertencias sobre muestras pequeñas, sesgos y causalidad.
 - Respiración guiada cómoda sin retenciones.
 - Secuencia de movilidad Flow de tres cuerpos.
 - Asignación aleatoria de tres condiciones exploratorias: audio, respiración y combinación. La condición inicia solo los componentes asignados y bloquea el control del componente excluido.
@@ -43,6 +47,12 @@ Versión **0.6**. Laboratorio sonoro ampliado con síntesis local y controles de
 4. Autoriza el envío de los datos mínimos antes de cada consulta.
 
 El modelo y proveedor son configurables. No se incrustan claves API en el sitio estático.
+
+## Límites de la medición y del aprendizaje
+- Las puntuaciones corporales, emocionales y cognitivas son autoevaluaciones, no mediciones objetivas ni diagnósticos. La rigidez percibida no mide tejido fascial.
+- El índice multimotor promedia cambios en ocho escalas y orienta la exploración; no es una escala validada. El rendimiento puede variar por sueño, estrés, expectativas, práctica, hora y contexto.
+- El intervalo de confianza mostrado es aproximado (media ± 1.96 errores estándar), descriptivo y potencialmente impreciso con muestras pequeñas. No ajusta comparaciones múltiples, autocorrelación ni confusores.
+- La app no establece que una combinación cause mejores resultados. Para inferencias más sólidas se necesitarían protocolos predefinidos, comparaciones repetidas y, cuando sea viable, asignación aleatoria y revisión metodológica.
 
 ## Límites del audio
 - La síntesis se ejecuta dentro del navegador y depende de que el dispositivo admita Web Audio API. El navegador puede pausar el audio al bloquear la pantalla o cambiar de aplicación.
